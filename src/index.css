@@ -1,0 +1,109 @@
+:root {
+  /* Premium Dark Theme Palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121214;
+  --bg-tertiary: #1c1c1f;
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #52525b;
+
+  --accent-primary: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-subtle: rgba(59, 130, 246, 0.08);
+
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+
+  --border-subtle: #27272a;
+  --border-strong: #3f3f46;
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --nav-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.4;
+  /* Tighter line height */
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+
+/* Utility */
+.container {
+  width: 100%;
+  /* TRUE FULL SCREEN */
+  max-width: none;
+  /* Removed the 1800px constraint */
+  margin: 0;
+  padding: 0 48px;
+  /* Consistent padding from edges */
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-secondary);
+}
