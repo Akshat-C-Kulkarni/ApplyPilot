@@ -1,16 +1,81 @@
-# React + Vite
+# ApplyPilot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ApplyPilot is an automated job application platform designed to streamline the recruitment process for both job seekers and recruiters. It features intelligent agentic workflows, role-based access control, and PDF generation capabilities.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 👥 Dual Role System
+- **Job Seeker**: Dedicated dashboard for managing profile, preferences, and tracking applications.
+- **Recruiter**: Dashboard for posting jobs and managing candidates.
 
-## React Compiler
+### 🚀 Job Seeker Tools
+- **Preferences Setup**: Customizable job preferences form.
+- **Resume Management**: Upload and confirmation workflow for resumes.
+- **Monitoring Dashboard**: Real-time tracking of agent activities (Monitoring, Paused, Applying, Completed).
+- **Application Results**: View summary of application outcomes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💼 Recruiter Tools
+- **Job Posting**: Interface to create and manage job listings.
+- **Candidate Overview**: (Planned) View and manage incoming applications.
 
-## Expanding the ESLint configuration
+### 🔒 Security & Architecture
+- **Authentication**: Secure login system with role-based routing (Job Seeker vs. Recruiter).
+- **Protected Routes**: Ensures users can only access pages relevant to their role and current state.
+- **Modern Stack**: Built with React, Vite, and Firebase.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Frontend Framework**: React 19
+- **Build Tool**: Vite
+- **Routing**: React Router DOM
+- **PDF Handling**: `jspdf` and `pdfjs-dist` for resume generation and processing.
+- **Icons**: Lucide React
+- **Linting**: ESLint
+
+## Getting Started
+
+### Prerequisites
+- Node.js (Latest LTS recommended)
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Akshat-C-Kulkarni/ApplyPilot.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd applypilot
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+## Project Structure
+
+```
+src/
+├── assets/          # Static assets
+├── components/      # Reusable UI components
+├── context/         # React Context (AppContext for state/auth)
+├── pages/           # Application pages (Dashboards, Forms, Auth)
+│   ├── WelcomePage.jsx
+│   ├── LoginPage.jsx
+│   ├── JobSeekerDashboardPage.jsx
+│   ├── RecruiterDashboardPage.jsx
+│   └── ...
+├── utils/           # Utility functions
+├── App.jsx          # Main application component with Routing
+└── main.jsx         # Entry point
+```
